@@ -17,7 +17,7 @@ function f_help
 	echo "\tgitsh [-flag] [\"commit\"]"; echo "\nflags:\n\tsans flags et un commit il \n\tfera: git add . ; git -m commit [\$commentaire]; git push\n"
 	echo "\t-a\tgit add [\$argument1]\n\t\t  s'il n'as pas d'args ils fera:[ git add . ] Par defaut"
 	echo "\t-c\tgit commit -m\n\t\t  msg defaut : $f\"git sh - $USER - $time - $host\"$w"
-	echo "\t-p\tgit push";echo "\t-pull\tgit pull"
+	echo "\t-p\tgit push";echo "\t-pull\tgit pull";echo "\t-alias\tset le_nom_passe=sh $PWD/$0$r(beta)$w\n\t\t  ou defaut : gitsh=sh $PWD/$0 $r(beta)$w"
 }
 ####################################################################
 
@@ -29,8 +29,10 @@ if [ $1 = "-h" ] || [ $1 = "-H" ] ; then f_help && break; fi
 if [ $1 = "-a" ] ; then if [ -s $2 ] ; then git add . ; else git add $2 ; fi && break ; fi
 if [ $1 = "-c" ] ; then if [ -s $2 ] ; then f_error "NO COMMIT || DEFAUT= $f\"git sh - $USER - $time - $host\"$w" && git commit -m "git sh - $USER - $time - $host" ; else git commit -m $2 ;fi && break ; fi
 if [ $1 = "-p" ] ; then git push && break ; fi
-if [ $1 = "-pull" ] ;then git pull ; fi
+if [ $1 = "-pull" ] ;then git pull && break ; fi
+#if [ $1 = "-alias" ] ; then if [ -s $2 ] ; then alias zgitsh="sh $PWD/$0"; else alias z$2="sh $PWD/$0";fi;fi
 if [ ${1:0:1} != "-" ] ; then echo "$f-=- git add . -=-$w" && git add . && echo "\n$f-=- commit -m \"$1\" -=-$w\n" && git commit -m $1 && echo "\n$f-=- git push -=-$w\n" && git push && break ; fi
+f_error "argument non valide"
 #------- by dnetto -------------------------------------
 break
 done
