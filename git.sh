@@ -25,8 +25,8 @@ function f_help
 ######################## code ######################################
 while [ 1 ] ; do
 
-	if [ -s $1 ] ; then f_error "NO ARGS" ; break ; fi
-	if [ "$1" = "-h" ] || [ $1 = "-H" ] ; then f_help ; break ; fi 
+	if [ -s "$1" ] ; then f_error "NO ARGS" ; break ; fi
+	if [ "$1" = "-h" ] || [ "$1" = "-H" ] ; then f_help ; break ; fi 
 	if [ "$1" = "-a" ] ; then if [ -s "$2" ] ; then git add "." ; else git add "$2" ; fi ; break ; fi
 	if [ "$1" = "-c" ] ; then if [ -s "$2" ] ; then f_error "NO COMMIT || DEFAUT= $f\"git sh - $USER - $time - $host\"$w" ; git commit -m "git sh - $USER - $time - $host" ; else git commit -m "$2" ; fi ; break ; fi
 	if [ "$1" = "-p" ] ; then git push ; break ; fi
