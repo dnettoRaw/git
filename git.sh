@@ -42,7 +42,7 @@ while [ 1 ] ; do
 	if [ "$1" = "-c" ] ; then if [ -s "$2" ] ; then f_error "NO COMMIT || DEFAUT= $f\"git sh - $USER - $time - $host\"$w" ; git commit -m "git sh - $USER - $time - $host" ; else git commit -m "$2" ; fi ; break ; fi
 	if [ "$1" = "-p" ] ; then git push ; break ; fi
 	if [ "$1" = "-pull" ] ; then git pull ; break ; fi
-	if [ "$1" = "-s" ] ; then echo "alias git_sh=\"sh $pth_l$0v\"">> ~/.zshrc ; echo "alias set [${g}ok${w}]"; break ;fi
+	if [ "$1" = "-s" ] ; then echo "alias git_sh=\"sh $pth_l$0\"">> ~/.zshrc ; echo "alias set [${g}ok${w}]"; break ;fi
 	if [ "$1" = "-r" ] ; then read -p "new mail : " MAIL ; read -p "new login : " NAME ; echo "Mail: $MAIL\nNom: $NAME" > $pth_l/login ; break ;fi  
 	if [ ${1:0:1} != "-" ] ; then echo "$f-=- git add . -=-$w" ; git add "." ; echo "\n$f-=- commit -m \"$1\" -=-$w\n" ; git commit -m "$1  at [$time]" ; echo "\n$f-=- git push -=-$w\n" ; git push ; break ; fi
 	f_error "argument non valide"
