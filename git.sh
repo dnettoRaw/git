@@ -17,8 +17,8 @@ function f_start
 		#git pull 
 	if [ -f login ] ; then
 		mailf=`cat $pth_l/login | grep Mail | cut -d ' ' -f2-`;nomf=`cat $pth_l/login | grep Nom | cut -d ' ' -f2-`
-		git config --global user.email $mailf
-		git config --global user.name $nomf
+		git config --global user.email "$mailf"
+		git config --global user.name "$nomf"
 		echo ".$nomf.$mailf."
 		break 
 	else 
