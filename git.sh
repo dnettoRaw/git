@@ -8,7 +8,6 @@ b="\033[34m";v="\033[35m";c="\033[36m";s="\033[37m";on=1;off=0
 pth_l=`dirname $0`
 ##################################################################
 
-
 ######################## Functions ###############################
 function f_echo { if [ $1 -eq $on ] ; then echo $2 ;fi ;}
 function f_error { echo "ERROR !! \n  [$r $1 $w] -h pour page de help."; }
@@ -17,11 +16,13 @@ function f_start
 	while [ 1 ] ; do
 		#git pull 
 	if [ -f login ] ; then
-		git config --global user.email `cat $pth_l/login | grep Mail | cut -d ' ' -f2-`
-		git config --global user.name `cat $pth_l/login | grep Name | cut -d ' ' -f2-`
+		mailf=`cat $pth_l/login | grep Mail | cut -d ' ' -f2-`;nomf=`cat $pth_l/login | grep Nom | cut -d ' ' -f2-`
+		git config --global user.email $mailf
+		git config --global user.name $nomf
+		echo ".$nomf.$mailf."
 		break 
 	else 
-		read -p "mail:" MAIL ; read -p "Nom:" NAME ; echo "mail: $MAIL\nNom: $NOM" > $pth_l/login
+		read -p "mail : " MAIL ; read -p "Nom : " NAME ; echo "Mail: $MAIL\nNom: $NAME" > $pth_l/login
 	fi
 	done
 }

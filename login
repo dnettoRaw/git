@@ -1,2 +1,2 @@
-mail: dnetto@student.42.fr
+Mail: dnetto@student.42.fr
 Nom: daniel
