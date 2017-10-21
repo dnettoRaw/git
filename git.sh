@@ -14,7 +14,7 @@ function f_error { echo "ERROR !! \n  [$r $1 $w] -h pour page de help."; }
 function f_start 
 { 
 	while [ 1 ] ; do
-	git pull 
+	git pull > /dev/null 2>&1 
 	if [ -f "$pth_l/login" ] ; then mailf=`cat $pth_l/login | grep Mail | cut -d ' ' -f2-`; nomf=`cat $pth_l/login | grep Nom | cut -d ' ' -f2-` ; git config --global user.email "$mailf" ; git config --global user.name "$nomf" ; break
    	else echo "le login et le mail du github, si tu veux pas etre identifie, metre ex: \nmail : ba@co.fr\nlogin : baba\n"; read -p "mail : " MAIL ; read -p "login : " NAME ; echo "Mail: $MAIL\nNom: $NAME" > $pth_l/login ; fi
 	done
