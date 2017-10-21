@@ -27,7 +27,7 @@ function f_help
 	echo "\t-c\tgit commit -m\n\t\t  msg defaut : $f\"git sh - $USER - $time - $host\"$w"
 	echo "\t-p\tgit push";echo "\t-pull\tgit pull"
 	#echo "\t-alias\tset le_nom_passe=sh $PWD/$0$r(beta)$w\n\t\t  ou defaut : gitsh=sh $PWD/$0 $r(beta)$w"
-	echo "\t-s\tset alias in .zshrc\n\t\t  defaut : $f alias git_sh=\"sh $pth_l$0v\"$w\n\t\t$y  !!attention, pas de verif effectue, eviter de salir zshrc avec des multiples -s!!$w"
+	echo "\t-s\tset alias in .zshrc\n\t\t  defaut : $f alias git_sh=\"sh $pth_l$0\"$w\n\t\t$y  !!attention, pas de verif effectue, eviter de salir zshrc avec des multiples -s!!$w"
 	echo "\t-r\treset user.login && user.email"
 }
 ####################################################################
