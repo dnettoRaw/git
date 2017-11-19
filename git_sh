@@ -49,7 +49,6 @@ function f_help
 }
 ####################################################################
 
-#########teste ####
 
 ######################## code ######################################
 f_start
@@ -126,12 +125,15 @@ else if [ "$1" = "-c" ] ; then
 		echo "\n$f-=- git push -=-$w\n"
 		git push
 		break
+
+##################### update ###############################
 else if [ "$1" = "-update" ] ; then 
 		cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-		git commit -m "skip error by: $USER - $time - $host"
-		git pull
+		git reset --hard origin/master
 		cd - > /dev/null
-		break	
+		break
+
+#################### normal mode ###############################
 else if [ "${1:0:1}" != "-" ] ; then 
 	echo "$f-=- git add . -=-$w"
 	git add "."
