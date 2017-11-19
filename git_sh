@@ -8,6 +8,7 @@ b="\033[34m";v="\033[35m";c="\033[36m";s="\033[37m";on=1;off=0
 pth_l=`dirname $0`
 ##################################################################
 
+
 ######################## Functions ###############################
 function f_echo { if [ $1 -eq $on ] ; then echo $2 ;fi ;}
 function f_error { echo "ERROR !! \n  [$r $1 $w] -h pour page de help."; }
