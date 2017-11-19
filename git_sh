@@ -118,6 +118,7 @@ else if [ "$1" = "-c" ] ; then
 		break
 else if [ "$1" = "-update" ] ; then 
 		cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+		git commit -m "skip error by: $USER - $time - $host"
 		git pull
 		cd - > /dev/null
 		break	
