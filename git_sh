@@ -57,14 +57,16 @@ echo "= mail  :$g $mailf$w"
 echo "= login :$g $nomf$w"
 echo "=========================================="
 while [ 1 ] ; do
-	######################## no args #####################################
+######################## no args #####################################
 	if [ -s $1 ] ; then 
 		f_error "NO ARGS"
 		exit 1
-	######################## help me #####################################
+
+######################## help me #####################################
 else if [ "$1" = "-h" ] || [ "$1" = "-H" ] ; then 
 	f_help
 	break
+
 ######################## add only ####################################
 else if [ "$1" = "-a" ] ; then 
 	if [ -s "$2" ] ; then 
@@ -73,6 +75,7 @@ else if [ "$1" = "-a" ] ; then
 		git add "$2"
 	fi
 	break
+
 ######################## commit only #################################
 else if [ "$1" = "-commit" ] ; then 
 	if [ -s "$2" ] ; then 
@@ -82,14 +85,17 @@ else if [ "$1" = "-commit" ] ; then
 		git commit -m "$2"
 	fi
 	break
+
 ######################## push only ###################################
 else if [ "$1" = "-p" ] ; then
 	git push
 	break
+
 ######################## git pull ####################################
 else if [ "$1" = "-pull" ] ; then 
 	git pull
 	break
+
 ######################## set alias ###################################
 else if [ "$1" = "-s" ] ; then
 	read -p "alias name : " aliasname
@@ -102,12 +108,14 @@ else if [ "$1" = "-s" ] ; then
 		f_error "alias < $f\" $aliasis \"$w$r > as already set, please set another name.";
 	fi  
 	break
+
 ######################## reset mail ##################################
 else if [ "$1" = "-r" ] ; then 
 	read -p "new mail : " MAIL
 	read -p "new login : " NAME
 	echo "Mail : $MAIL\nLogin: $NAME" > $pth_l/login
 	break
+
 ######################## add/commit/push  oh year ####################
 else if [ "$1" = "-c" ] ; then 
 		echo "$f-=- git add . -=-$w"
