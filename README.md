@@ -2,6 +2,7 @@
 Git sh ;)
 
 fatigue de faire:
+
 $> git add .
 $> git commit -m "banana"
 $> git push
