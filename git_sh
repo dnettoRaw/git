@@ -116,7 +116,9 @@ else if [ "$1" = "-c" ] ; then
 		git push
 		break
 else if [ "$1" = "-update" ] ; then 
-		git pull "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+		cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+		git pull
+		cd - > /dev/null
 		break	
 else if [ "${1:0:1}" != "-" ] ; then 
 	echo "$f-=- git add . -=-$w"
