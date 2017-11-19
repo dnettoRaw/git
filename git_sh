@@ -41,6 +41,7 @@ function f_help
 	echo "\t-c\tgit add/commit/push -m\n\t\t  msg defaut : $f\"git sh - $USER - $time - $host\"$w\n"
 	echo "\t-p\tgit push\n"
 	echo "\t-pull\tgit pull\n"
+	echo "\t-update\tupdate gitsh\n"
 	#echo "\t-alias\tset le_nom_passe=sh $PWD/$0$r(beta)$w\n\t\t  ou defaut : gitsh=sh $PWD/$0 $r(beta)$w"
 	echo "\t-s\tset alias in .zshrc\n\t\t  output exemple : $f alias git_sh=\"sh $pth_l$0\"$w\n"
 	echo "\t-r\treset user.login && user.email\n"
@@ -50,10 +51,10 @@ function f_help
 
 ######################## code ######################################
 f_start
-echo "========================================="
+echo "=========================================="
 echo "= mail  :$g $mailf$w"
 echo "= login :$g $nomf$w"
-echo "========================================="
+echo "=========================================="
 while [ 1 ] ; do
 	######################## no args #####################################
 	if [ -s $1 ] ; then 
@@ -113,7 +114,10 @@ else if [ "$1" = "-c" ] ; then
 		git commit -m "git sh - $USER - $time - $host"
 		echo "\n$f-=- git push -=-$w\n"
 		git push
-		break 
+		break
+else if [ "$1" = "-update" ] ; then 
+		git pull "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+		break	
 else if [ "${1:0:1}" != "-" ] ; then 
 	echo "$f-=- git add . -=-$w"
 	git add "."
@@ -122,7 +126,7 @@ else if [ "${1:0:1}" != "-" ] ; then
 	echo "\n$f-=- git push -=-$w\n"
 	git push
 	break
-fi ; fi ; fi ; fi ; fi ; fi ; fi ; fi ; fi ; fi
+fi ; fi ; fi ; fi ; fi ; fi ; fi ; fi ; fi ; fi ; fi
 f_error "argument non valide"
 #------- by dnetto -------------------------------------
 break
