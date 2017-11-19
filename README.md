@@ -1,10 +1,10 @@
 # git
 Git sh ;)
 
-fatigue de faire:
-$> git add .
-$> git commit -m "banana"
-$> git push
+fatigue de faire: 
+$> git add . 
+$> git commit -m "banana" 
+$> git push 
 
 
 si t'est si flemmard.e que moi
