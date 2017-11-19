@@ -96,6 +96,7 @@ else if [ "$1" = "-s" ] ; then
    	if [ "$aliasis" = "" ] ; then
 		echo "alias git_sh=\"sh $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/`basename $0`\"" >> ~/.zshrc 
 		echo "alias set [${g}ok${w}]"
+		source ~/.zshrc
   	else 
 		f_error "alias < $f\" $aliasis \"$w$r > as already set, please set another name.";
 	fi  
