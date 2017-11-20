@@ -129,7 +129,9 @@ else if [ "$1" = "-c" ] ; then
 ##################### update ###############################
 else if [ "$1" = "-update" ] ; then 
 		cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-		git reset --hard origin/master
+		git reset --hard HEAD
+		git clean -f -d
+		git pull
 		cd - > /dev/null
 		break
 
