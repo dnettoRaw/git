@@ -126,7 +126,7 @@ else if [ "$1" = "-r" ] ; then
 ######################## add/commit/push  oh year ####################
 else if [ "$1" = "-c" ] ; then 
 		f_check
-		echo "$f-=- git add . -=-$w"
+		echo "$f-=- git add -A -=-$w"
 		git add -A
 		echo "\n$f-=- commit -m \"$1\" -=-$w\n"
 		git commit -m "git sh - $USER - $time - $host"
@@ -146,7 +146,7 @@ else if [ "$1" = "-update" ] ; then
 #################### normal mode ###############################
 else if [ "${1:0:1}" != "-" ] ; then 
 	f_check
-	echo "$f-=- git add . -=-$w"
+	echo "$f-=- git add -A -=-$w"
 	git add -A
 	echo "\n$f-=- commit -m \"$1\" -=-$w\n"
 	git commit -m "$1  at [$time]"
