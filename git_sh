@@ -36,8 +36,8 @@ function f_help
 	echo "\t-h -H\thelp meu"
 	echo "\nusage:"
 	echo "\tgitsh [-flag] [\"commit\"]"
-	echo "\nflags:\n\tsans flags et un commit \n\til fera:$f git add . ; git -m commit [\$commentaire]; git push\n$w\n"
-	echo "\t-a\tgit add [\$argument1]\n\t\t  s'il n'as pas d'args ils fera:[ git add . ] Par defaut\n"
+	echo "\nflags:\n\tsans flags et un commit \n\til fera:$f git add -A ; git -m commit [\$commentaire]; git push\n$w\n"
+	echo "\t-a\tgit add [\$argument1]\n\t\t  s'il n'as pas d'args ils fera:[ git add -A ] Par defaut\n"
 	echo "\t-commit\tgit commit -m\n\t\t  msg defaut : $f\"git sh - $USER - $time - $host\"$w\n"
 	echo "\t-c\tgit add/commit/push -m\n\t\t  msg defaut : $f\"git sh - $USER - $time - $host\"$w\n"
 	echo "\t-p\tgit push\n"
@@ -77,7 +77,7 @@ else if [ "$1" = "-h" ] || [ "$1" = "-H" ] ; then
 ######################## add only ####################################
 else if [ "$1" = "-a" ] ; then 
 	if [ -s "$2" ] ; then 
-		git add "."
+		git add -A
 	else
 		git add "$2"
 	fi
@@ -127,7 +127,7 @@ else if [ "$1" = "-r" ] ; then
 else if [ "$1" = "-c" ] ; then 
 		f_check
 		echo "$f-=- git add . -=-$w"
-		git add "."
+		git add -A
 		echo "\n$f-=- commit -m \"$1\" -=-$w\n"
 		git commit -m "git sh - $USER - $time - $host"
 		echo "\n$f-=- git push -=-$w\n"
@@ -147,7 +147,7 @@ else if [ "$1" = "-update" ] ; then
 else if [ "${1:0:1}" != "-" ] ; then 
 	f_check
 	echo "$f-=- git add . -=-$w"
-	git add "."
+	git add -A
 	echo "\n$f-=- commit -m \"$1\" -=-$w\n"
 	git commit -m "$1  at [$time]"
 	echo "\n$f-=- git push -=-$w\n"
