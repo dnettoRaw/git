@@ -43,6 +43,7 @@ function f_help
 	echo "\t-p\tgit push\n"
 	echo "\t-pull\tgit pull\n"
 	echo "\t-update\tupdate gitsh\n"
+	echo "\t-log\tlog du git avec des couleurs :P\n"
 	#echo "\t-alias\tset le_nom_passe=sh $PWD/$0$r(beta)$w\n\t\t  ou defaut : gitsh=sh $PWD/$0 $r(beta)$w"
 	echo "\t-s\tset alias in .zshrc\n\t\t  output exemple : $f alias git_sh=\"sh $pth_l$0\"$w\n"
 	echo "\t-r\treset user.login && user.email\n"
@@ -82,7 +83,10 @@ else if [ "$1" = "-a" ] ; then
 		git add "$2"
 	fi
 	break
-
+######################## git log 2.2 #################################
+else if [ "$1" = "-log" ] ; then
+	 git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+	break
 ######################## commit only #################################
 else if [ "$1" = "-commit" ] ; then 
 	if [ -s "$2" ] ; then 
@@ -153,7 +157,7 @@ else if [ "${1:0:1}" != "-" ] ; then
 	echo "\n$f-=- git push -=-$w\n"
 	git push
 	break
-fi ; fi ; fi ; fi ; fi ; fi ; fi ; fi ; fi ; fi ; fi
+fi ; fi ; fi ; fi; fi ; fi ; fi ; fi ; fi ; fi ; fi ; fi
 f_error "argument non valide"
 #------- by dnetto -------------------------------------
 break
