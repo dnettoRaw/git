@@ -47,6 +47,13 @@ function f_help
 	echo "\t-s\tset alias in .zshrc\n\t\t  output exemple : $f alias git_sh=\"sh $pth_l$0\"$w\n"
 	echo "\t-r\treset user.login && user.email\n"
 }
+function f_check
+{
+	if [ ! -d "$PWD/.git" ] ; then
+		f_error "vous etez pas la racine de votre git"
+		exit 1
+	fi
+}
 ####################################################################
 
 
@@ -118,6 +125,7 @@ else if [ "$1" = "-r" ] ; then
 
 ######################## add/commit/push  oh year ####################
 else if [ "$1" = "-c" ] ; then 
+		f_check
 		echo "$f-=- git add . -=-$w"
 		git add "."
 		echo "\n$f-=- commit -m \"$1\" -=-$w\n"
@@ -137,6 +145,7 @@ else if [ "$1" = "-update" ] ; then
 
 #################### normal mode ###############################
 else if [ "${1:0:1}" != "-" ] ; then 
+	f_check
 	echo "$f-=- git add . -=-$w"
 	git add "."
 	echo "\n$f-=- commit -m \"$1\" -=-$w\n"
