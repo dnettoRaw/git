@@ -132,7 +132,7 @@ else if [ "$1" = "-c" ] ; then
 		f_check
 		echo "$f-=- git add -A -=-$w"
 		git add -A
-		echo "\n$f-=- commit -m \"$1\" -=-$w\n"
+		echo "\n$f-=- commit -m  -=- \"git sh - $USER - $time - $host\"$w\n"
 		git commit -m "git sh - $USER - $time - $host"
 		echo "\n$f-=- git push -=-$w\n"
 		git push
