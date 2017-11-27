@@ -1,6 +1,9 @@
 # git
 Git sh ;)
 
+git clone:
+
+	$> git clone https://github.com/dnetto42/git.git ~/.git_sh ; sh ~/.git_sh/git_sh -h
 
 fatigue de faire:
 	
