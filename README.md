@@ -12,7 +12,7 @@ fatigue de faire:
 	$> git push 
 
 
-si t'est si flemmard.e que moi
+si t'est si flemmard que moi
 	
 	$> git clone https://github.com/dnetto42/git.git ~/git_sh
 
