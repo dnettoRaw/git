@@ -2,7 +2,7 @@
 #-------- by dnetto ------------------------
 
 ######################## VARS ####################################
-time=`date '+%d-%m-%Hh%Mm'`; if [ -z "$host" ] ;then host=`uname -n`;fi
+time=`date '+%Y-%d-%m-%Hh%Mm'`; if [ -z "$host" ] ;then host=`uname -n`;fi
 w="\033[0m";r="\033[31m";g="\033[32m";y="\033[33m";f="\033[1m"
 b="\033[34m";v="\033[35m";c="\033[36m";s="\033[37m";on=1;off=0
 pth_l=`dirname $0`
