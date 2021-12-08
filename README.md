@@ -3,7 +3,7 @@ Git sh ;)
 
 git clone:
 
-	$> git clone https://github.com/dnetto42/git.git ~/.git_sh ; sh ~/.git_sh/git_sh -h
+	$> git clone https://github.com/dnetto42/git.git ~/.git_sh ; bash ~/.git_sh/git_sh -h
 
 fatigue de faire:
 	
@@ -18,14 +18,14 @@ si t'est si flemmard que moi
 
 pour set le alias:
 
-	$> sh git_sh -s 
+	$> bash git_sh -s 
 
 
 pour voir les options:
 	
-	$> sh git_sh -h
+	$> bash git_sh -h
 
 
 easy push:
   
-  	$> sh git_sh -c
+  	$> bash git_sh -c
